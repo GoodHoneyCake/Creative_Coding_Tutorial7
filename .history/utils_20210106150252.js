@@ -29,7 +29,7 @@ export function linePoint(x1, y1, x2, y2, px, py) {
 export function lineCircle(x1, y1, x2, y2, cx, cy, r) {
   const lineLength = distance(x1, y1, x2, y2);
   const point =
-    ((cx - x1) * (x2 - x1) + (cy - y1) * (y2 - y1)) / Math.pow(lineLength, 2);
+    ((cy - x1) * (x2 - x1) + (cx - y1) * (y2 - y1)) / Math.pow(lineLength, 2);
 
   const px = x1 + point * (x2 - x1);
   const py = y1 + point * (y2 - y1);

@@ -40,20 +40,20 @@ export class BounceString {
     this.rgb = 0x000000;
   }
   animate(ctx, moveX, moveY) {
-    // ctx.beginPath();
-    // ctx.fillStyle = "#00ff00";
-    // ctx.arc(moveX, moveY, 6, 0, Math.PI * 2);
-    // ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "#00ff00";
+    ctx.arc(moveX, moveY, 6, 0, Math.PI * 2);
+    ctx.fill();
 
-    // ctx.beginPath();
-    // ctx.fillStyle = "#0000ff";
-    // ctx.arc(this.points[0].x, this.points[0].y, 6, 0, Math.PI * 2);
-    // ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "#0000ff";
+    ctx.arc(this.points[0].x, this.points[0].y, 6, 0, Math.PI * 2);
+    ctx.fill();
 
-    // ctx.beginPath();
-    // ctx.fillStyle = "#ff0000";
-    // ctx.arc(this.points[2].x, this.points[2].y, 6, 0, Math.PI * 2);
-    // ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "#ff0000";
+    ctx.arc(this.points[2].x, this.points[2].y, 6, 0, Math.PI * 2);
+    ctx.fill();
 
     this.rgb += (this.saveRgb - this.rgb) * 0.12;
 
@@ -104,12 +104,6 @@ export class BounceString {
       const cy = (prevY + this.points[i].y) / 2;
 
       ctx.quadraticCurveTo(prevX, prevY, cx, cy);
-
-      prevX = this.points[i].x;
-      prevY = this.points[i].y;
     }
-
-    ctx.lineTo(prevX, prevY);
-    ctx.stroke();
   }
 }
