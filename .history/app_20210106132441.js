@@ -6,7 +6,7 @@ class App {
       google: {
         families: ["Hind:700"],
       },
-      fontactive: () => {
+      fonctactive: () => {
         this.text = new Text();
         this.text.setText(
           "A",

@@ -1,4 +1,4 @@
-import { Text } from "./text.js";
+import { Text } from "./text";
 
 class App {
   constructor() {
@@ -6,10 +6,10 @@ class App {
       google: {
         families: ["Hind:700"],
       },
-      fontactive: () => {
+      fonctactive: () => {
         this.text = new Text();
         this.text.setText(
-          "A",
+          "a",
           2,
           document.body.clientWidth,
           document.body.clientHeight
