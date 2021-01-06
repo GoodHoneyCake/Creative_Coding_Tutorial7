@@ -29,12 +29,7 @@ class App {
 
     this.canvas.width = this.stageWidth * this.pixelRatio;
     this.canvas.height = this.stageHeight * this.pixelRatio;
-    this.canvas.style.width = this.stageWidth + "px";
-    this.canvas.style.height = this.stageHeight + "px";
-
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
-    this.ctx.lineCap = "round";
-    this.ctx.lineWidth = 4;
 
     this.visual.show(this.stageWidth, this.stageHeight);
   }

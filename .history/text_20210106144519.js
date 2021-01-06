@@ -91,7 +91,7 @@ export class Text {
       const tx = i * gap + minX;
       xArray[i] = [];
 
-      for (let j = 0; j < yTotal; j++) {
+      for (let j = 0; j < jTotal; j++) {
         const ty = j * gap + minY;
 
         for (let k = 0; k < particles.length; k++) {
@@ -121,8 +121,6 @@ export class Text {
             minY: pos.item.y,
             maxY: pos.item.y,
           });
-
-          check = 1;
         } else if (check == 1) {
           if (pointCircle(pos.x, pos.item.y, pos.x, prevY, gap)) {
             const cur = outline[outline.length - 1];
@@ -144,13 +142,5 @@ export class Text {
         }
       }
     }
-    return {
-      particles,
-      minX,
-      maxX,
-      minY,
-      maxY,
-      outline,
-    };
   }
 }

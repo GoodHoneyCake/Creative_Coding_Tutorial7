@@ -121,8 +121,6 @@ export class Text {
             minY: pos.item.y,
             maxY: pos.item.y,
           });
-
-          check = 1;
         } else if (check == 1) {
           if (pointCircle(pos.x, pos.item.y, pos.x, prevY, gap)) {
             const cur = outline[outline.length - 1];

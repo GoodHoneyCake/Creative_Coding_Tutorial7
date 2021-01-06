@@ -91,66 +91,15 @@ export class Text {
       const tx = i * gap + minX;
       xArray[i] = [];
 
-      for (let j = 0; j < yTotal; j++) {
+      for (let j = 0; j < jTotal; j++) {
         const ty = j * gap + minY;
 
         for (let k = 0; k < particles.length; k++) {
           const item = particles[k];
-          if (pointCircle(item.x, item.y, tx, ty, gap)) {
-            xArray[i].push({
-              x: tx,
-              item,
-            });
+          if (pointCircle) {
           }
         }
       }
     }
-
-    let check = 0;
-    let prevY;
-    for (let i = 0; i < xArray.length; i++) {
-      check = 0;
-
-      for (let j = 0; j < xArray[i].length; j++) {
-        const pos = xArray[i][j];
-
-        if (check == 0) {
-          prevY = pos.item.y;
-          outline.push({
-            x: pos.x,
-            minY: pos.item.y,
-            maxY: pos.item.y,
-          });
-
-          check = 1;
-        } else if (check == 1) {
-          if (pointCircle(pos.x, pos.item.y, pos.x, prevY, gap)) {
-            const cur = outline[outline.length - 1];
-            cur.minY = Math.min(cur.minY, pos.item.y);
-            cur.maxY = Math.max(cur.maxY, pos.item.y);
-            check = 1;
-            prevY = pos.item.y;
-          } else {
-            check = 2;
-          }
-        } else if (check == 2) {
-          prevY = pos.item.y;
-          outline.push({
-            x: pos.x,
-            minY: pos.item.y,
-            maxY: pos.item.y,
-          });
-          check = 1;
-        }
-      }
-    }
-    return {
-      particles,
-      minX,
-      maxX,
-      minY,
-      maxY,
-      outline,
-    };
   }
 }

@@ -34,7 +34,6 @@ class App {
 
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
     this.ctx.lineCap = "round";
-    this.ctx.lineWidth = 4;
 
     this.visual.show(this.stageWidth, this.stageHeight);
   }
